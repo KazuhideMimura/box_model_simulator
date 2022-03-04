@@ -6,6 +6,8 @@ Only the standard Python libraries are used, except optional libraries for model
 
 ![code-example](results/one-box-model/screenshot.png)
 
+[check sample code](examples/one-box.ipynb)
+
 ## set-up
 **If you want to visualize the model**
 
