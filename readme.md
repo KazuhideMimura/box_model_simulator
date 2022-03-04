@@ -12,3 +12,6 @@ Only the standard Python libraries are used, except optional libraries for model
 1. download and set-up Graphviz from the [official site](https://graphviz.org/download/)
 1. `pip install graphviz`
 1. (If necessary) `pip install ipython`
+
+## log
+2022/3/4: released version 0
