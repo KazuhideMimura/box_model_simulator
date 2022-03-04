@@ -14,4 +14,4 @@ Only the standard Python libraries are used, except optional libraries for model
 1. (If necessary) `pip install ipython`
 
 ## log
-2022/3/4: released version 0
+2022/3/4: version 0
