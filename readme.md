@@ -4,6 +4,7 @@ box-model-simulator is a program developed to simulate box model problems with a
 
 Only the standard Python libraries are used, except optional libraries for model visualization.
 
+![code-example](results/one-box-model/screenshot.png)
 
 ## set-up
 **If you want to visualize the model**
