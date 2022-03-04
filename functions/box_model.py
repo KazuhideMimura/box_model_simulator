@@ -36,8 +36,8 @@ class Model:
             display_name_from = self.reservoirs[v['from']]['display_name']
             display_name_to = self.reservoirs[v['to']]['display_name']
             G.edge(display_name_from, display_name_to, label = f" {v['name']} ")
-        G.render(f"charts/{self.name}")
-        print(f"saved: charts/{self.name}.png")
+        G.render(f"../charts/{self.name}")
+        print(f"saved: ../charts/{self.name}.png")
     
     # main
     def run(self, t_init = 0, t_end = 10000, t_step = 1, show_progress = 10000):
@@ -59,7 +59,7 @@ class Model:
         t_list += [t_list[-1] + t_step]
         self.results = {'t_list': t_list, 'Masses': Masses}
         
-    def visualize_masses(self, key_number_list = None):
+    def visualize_masses(self, key_number_list = None, save = False):
         assert self.results is not None, 'no results'
         if not key_number_list:
             key_number_list = [n for n in self.reservoirs.keys() if n != 0]
@@ -71,9 +71,14 @@ class Model:
             plt.title(f"reservoir: {box_name}")
             plt.xlabel(f"Time [{self.unit['time']}]")
             plt.ylabel(f"Mass [{self.unit['mass']}]")
+            if save:
+                save_dir = f"../results/{self.name}"
+                os.makedirs(save_dir,exist_ok = True)
+                save_path = os.path.join(save_dir, f"reservoir_{k:0=2}_{box_name}.jpg")
+                plt.savefig(save_path)
             plt.show()
     
-    def visualize_fluxes(self, key_list = None):
+    def visualize_fluxes(self, key_list = None, save = False):
         assert self.results is not None, 'no results'
         if not key_list:
             key_list = list(self.fluxes.keys())
@@ -84,6 +89,11 @@ class Model:
             plt.title(f"flux: {flux_name}")
             plt.xlabel(f"Time [{self.unit['time']}]")
             plt.ylabel(f"Flux [{self.unit['mass']} / {self.unit['time']}]")
+            if save:
+                save_dir = f"../results/{self.name}"
+                os.makedirs(save_dir,exist_ok = True)
+                save_path = os.path.join(save_dir, f"flux_{k}_{flux_name}.jpg")
+                plt.savefig(save_path)
             plt.show()
             
 # differential function
