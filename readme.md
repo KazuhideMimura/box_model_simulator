@@ -1,4 +1,5 @@
-# box-model-simulator
+# box_model_simulator
+![Visitors](https://visitor-badge.glitch.me/badge?page_id=KazuhideMimura/box_model_simulator&left_color=gray&right_color=blue)
 
 box-model-simulator is a program developed to simulate box model problems with a simple user interface.
 
